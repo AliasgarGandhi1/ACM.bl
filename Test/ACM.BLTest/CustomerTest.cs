@@ -16,13 +16,32 @@ namespace ACM.BLTest
                 FirstName = "Aliasgar",
                 LastName = "Gandhi"
             };
-            string actual = "Gandhi, Aliasgar";
+            string expected = "Gandhi, Aliasgar";
 
             //Act
-            string expected = customer.FullName;
+            string actual = customer.FullName;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void FullNameFirstNameEmpty()
+        {
+            //Arrange
+            Customer customer = new Customer
+            {   
+                LastName = "Gandhi"
+            };
+            string expected = "Gandhi";
+
+            //Act
+            string actual = customer.FullName;
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
     }
+
+
 }

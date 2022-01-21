@@ -32,7 +32,17 @@ namespace ACM.bl
         public string FullName 
         {   get
             {
-                return LastName + ", " + FirstName;
+                string fullName = LastName;
+
+                if (!String.IsNullOrEmpty(FirstName))
+                {
+                    if (!String.IsNullOrWhiteSpace(fullName))
+                    {
+                        fullName += ", ";
+                    }
+                    fullName += FirstName;
+                }
+                return fullName;   
             }  
         }
     }
